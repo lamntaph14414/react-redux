@@ -1,14 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import { isAuthenticate } from '../../utils/localstorage'
 const SidebarUser = () => {
+    let userInfo
+    if (isAuthenticate()) {
+        const { user } = isAuthenticate();
+        userInfo = user
+    }
     return (
         <>
             <div className="">
                 <div className="text-center">
                     <img className="img-responsive w-20 h-20 object-cover inline-block rounded-full" src="https://image.thanhnien.vn/w660/Uploaded/2022/bzivoxbp/2021_01_25/rose_qnem.jpg" alt="" />
-                    <span className="block mt-2 font-bold"></span>
-                    <span className="block text-gray-darker"></span>
+                    <span className="block mt-2 font-bold">{userInfo.name}</span>
+                    <span className="block text-gray-darker">{userInfo.email}</span>
                 </div>
                 <div className="flex my-3">
                     <div className="m-auto">

@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom';
-type Props = {}
+import { useDispatch, useSelector } from 'react-redux';
+import { listCategory } from '../../../features/categoryPro/cateProSlice';
 
-const AsideCategory = (props: Props) => {
+const AsideCategory = () => {
+    const categories = useSelector((data => data.category.value))
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(listCategory())
+    },[])
   return (
     <aside className="rounded-lg bg-white py-5 px-3 sticky top-[10px]">
             <div className="shop__category-group">
@@ -19,12 +26,14 @@ const AsideCategory = (props: Props) => {
             <div className="shop__category-group">
                 <span className="ff-2">Category</span>
                 <ul className="category-item__list p-0">
-                <li className="category-item__item list-none my-1 mx-0"> <NavLink to=""
-                            className="cate-link inline-block w-full py-[6px] px-[5px] rounded-[5px] trans-second hover:bg-primary-15-color hover:text-primary-color">
-                             </NavLink> </li>
-
+                    {categories?.map((item, index) => {
+                        return <li key={index} className="category-item__item list-none my-1 mx-0"> <NavLink to={`/categories/${item._id}`}
+                        className="cate-link inline-block w-full py-[6px] px-[5px] rounded-[5px] trans-second hover:bg-primary-15-color hover:text-primary-color">
+                        {item.name}</NavLink> </li>
+                    })}
                 </ul>
-                </div>
+
+            </div>
             <div className="shop__category-group">
                 <span className="ff-2">Filter</span>
                 <div className="my-2">

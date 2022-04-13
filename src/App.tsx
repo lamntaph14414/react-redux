@@ -5,6 +5,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import HomePage from './pages/client/HomePage';
 import ProductPage from './pages/client/shop/ProductPage';
+import ProductCate from './pages/client/shop/ProductCatePage';
+import ProductDetailPage from './pages/client/shop/ProductDetailPage';
 import AboutPage from './pages/client/AboutPage';
 import ContactPage from './pages/client/ContacPage';
 
@@ -20,6 +22,7 @@ import EditProduct from './pages/admin/product/EditProduct';
 import AddProduct from './pages/admin/product/AddProduct';
 
 import Page404 from './pages/Page404';
+
 function App() {
   return (
     <>
@@ -28,7 +31,7 @@ function App() {
         <Route path="/" element={<WebsiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/categories/all/:page" element={<ProductPage />} />
-          <Route path="/categories/:cateName" element={<ProductCatePage />} />
+          <Route path="/categories/:cateName" element={<ProductCate />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product/:productName" element={<ProductDetailPage />} />

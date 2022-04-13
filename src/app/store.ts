@@ -1,17 +1,25 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore} from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer
+  // FLUSH,
+  // REHYDRATE,
+  // PAUSE,
+  // PERSIST,
+  // PURGE
+} from "redux-persist";
+import storage from 'redux-persist/lib/storage';
+import rootReducer from "../features/index";
+
+const persistConfig = {
+  key: "mainStore",
+  storage,
+  whitelist: ["user", "cart"]
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: persistedReducer,
 });
-
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+export const persistor = persistStore(store);

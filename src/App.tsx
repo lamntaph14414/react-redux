@@ -1,57 +1,62 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import WebsiteLayout from './pages/layouts/WebsiteLayout';
+import HomePage from './pages/client/HomePage';
+import ProductPage from './pages/client/shop/ProductPage';
+import AboutPage from './pages/client/AboutPage';
+import ContactPage from './pages/client/ContacPage';
 
+import AuthLayout from './pages/layouts/AuthLayout';
+import Register from './pages/auth/Register';
+import SignIn from './pages/auth/SignIn';
+
+import PrivateRouter from './components/PrivateRouter';
+import AdminLayout from './pages/layouts/AdminLayout';
+import Dashboard from './pages/admin/Dashboard';
+import Product from './pages/admin/product/Product';
+import EditProduct from './pages/admin/product/EditProduct';
+import AddProduct from './pages/admin/product/AddProduct';
+
+import Page404 from './pages/Page404';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <Routes>
+        {/* Website */}
+        <Route path="/" element={<WebsiteLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/categories/all/:page" element={<ProductPage />} />
+          <Route path="/categories/:cateName" element={<ProductCatePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/product/:productName" element={<ProductDetailPage />} />
+
+
+        </Route>
+
+        {/* auth */}
+        <Route element={<AuthLayout />}>
+          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<SignIn />} />
+        </Route>
+
+        {/* admin */}
+        <Route path="admin" element={<PrivateRouter><AdminLayout /></PrivateRouter>}>
+          <Route index element={<Navigate to="dashboard" />} />
+          <Route path="dashboard" element={<Dashboard />} />
+        
+          <Route path="product">
+            <Route index element={< Product />} />
+            <Route path=":id/edit" element={<EditProduct />} />
+            <Route path="add" element={<AddProduct />} />
+          </Route>
+        </Route>
+
+        <Route path='*' element={<Page404/>} />
+      </Routes>
+    </>
   );
 }
 

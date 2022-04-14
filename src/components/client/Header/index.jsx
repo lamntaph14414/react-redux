@@ -4,9 +4,7 @@ import ActionAuth from './ActionAuth'
 import Menu from './Menu'
 import SearchForm from './SearchForm'
 
-type Props = {}
-
-const index = (props: Props) => {
+const index = () => {
   return (
     <>
             <header className="py-2 px-[30px]">

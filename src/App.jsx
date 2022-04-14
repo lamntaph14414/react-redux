@@ -1,7 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { addProduct, listProduct } from './features/product/productSlice';
+
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import HomePage from './pages/client/HomePage';
 import ProductPage from './pages/client/shop/ProductPage';
@@ -24,6 +26,12 @@ import AddProduct from './pages/admin/product/AddProduct';
 import Page404 from './pages/Page404';
 
 function App() {
+  const product = useSelector(data => data.product.value)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(listProduct())
+  }, []);
   return (
     <>
       <Routes>

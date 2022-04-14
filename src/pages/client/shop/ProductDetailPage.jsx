@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { read } from '../../../api/product'
+import { addItemToCart,  } from '../../../features/cart/cartSlice'
 import { relatedProduct as relatedPro } from '../../../features/categoryPro/proInCateSlice'
 import { formatPercent, formatPrice } from '../../../utils/formatNumber'
 import { splitArray } from '../../../utils/splitSize'
@@ -22,7 +23,6 @@ const ProductDetailPage = () => {
             idPro: productOne._id,
             size: product.size,
             img: productOne.img,
-            // quantity: quantity * 1,
             quantity: 1,
             name: productOne.name,
             desc: productOne.desc,

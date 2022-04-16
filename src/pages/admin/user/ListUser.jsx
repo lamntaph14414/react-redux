@@ -1,10 +1,7 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { DataGrid } from '@mui/x-data-grid';
-import { formatPrice } from '../../../utils/formatNumber'
 import { listUser, updateUser } from '../../../features/user/userSlice';
 
 const ListUser = () => {

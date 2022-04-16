@@ -1,7 +1,7 @@
 import instance from "./instance";
 import { isAuthenticate } from '../utils/localstorage'
 
-const { user, token } = isAuthenticate();
+const { token, user } = isAuthenticate();
 
 export const list = () => {
     const url = `users`;

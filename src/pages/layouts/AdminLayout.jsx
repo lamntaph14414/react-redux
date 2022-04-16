@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom'
 import NavAdmin from '../../components/admin/Nav'
 import Sidebar from '../../components/admin/Sidebar'
 
-type Props = {}
 
-const AdminLayout = (props: Props) => {
+
+const AdminLayout = () => {
   return (
     <>
         <div className=" flex h-screen bg-gray-50 :bg-gray-900">

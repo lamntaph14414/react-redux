@@ -7,7 +7,7 @@ export const list = () => {
     return instance.get(url);
 }
 export const remove = (id) => {
-    const url = `product/${id}/${user._id}`;
+    const url = `products/${id}/${user._id}`;
     return instance.delete(url, {
         headers: {
             "Authorization": `Bearer ${token}`
@@ -23,11 +23,11 @@ export const create = (product) => {
     });
 }
 export const read = (id) => {
-    const url = `product/${id}`;
+    const url = `products/${id}`;
     return instance.get(url);
 }
 export const update = (product) => {
-    const url = `product/${product._id}/${user._id}`;
+    const url = `products/${product._id}/${user._id}`;
     return instance.put(url, product, {
         headers: {
             "Authorization": `Bearer ${token}`

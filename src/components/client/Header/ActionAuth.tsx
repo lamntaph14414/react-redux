@@ -40,7 +40,7 @@ const ActionAuth = () => {
                     : <div className="flex w-full">
                         <NavLink to="/signin" className="ml-[8px] trans-second hover:opacity-80">Sign In</NavLink>
                         <span className="ml-[8px] ">/</span>
-                        <NavLink to="/signup" className="ml-[8px] trans-second hover:opacity-80">Sign Up</NavLink>
+                        <NavLink to="/register" className="ml-[8px] trans-second hover:opacity-80">Sign Up</NavLink>
                     </div>}
             </div>
         </div>

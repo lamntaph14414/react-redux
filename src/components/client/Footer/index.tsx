@@ -7,7 +7,7 @@ const index = (props: Props) => {
     <div>
         <footer className="max-w-full text-center p-6 border-t border-gray-200 mt-[1px] bg-white">
             <div className="">
-                <span> &copy; 2021 Anh's Bee Store. All rights reserved</span>
+                <span> &copy; 2021 Bee Store. All rights reserved</span>
             </div>
         </footer>
     </div>

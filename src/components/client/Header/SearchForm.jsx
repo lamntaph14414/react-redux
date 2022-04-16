@@ -17,7 +17,7 @@ const SearchForm = () => {
       setOpenSearch(false)
     }
   }
-  const {register, handleSubmit, formState: { errors }} = useForm();
+  const { register, handleSubmit} = useForm();
   const onKeyUp = async (data) => {
     dispatch(getProductSearch(data.keyword))
     if (!data.keyword) {

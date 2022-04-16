@@ -178,7 +178,7 @@ const ProductDetailPage = () => {
                         <h4 className="text-2xl py-3">Related products <b></b></h4>
                         <div className="renderNoProduct text-center"></div>
                         <div className="grid grid-cols-5 gap-5 max-w-7xl m-auto">
-                            {(!relatedProduct.relatedProduct || relatedProduct.relatedProduct.length == 0) ? <p className="text-orange-800">Have no related product!</p>
+                            {(!relatedProduct.relatedProduct || relatedProduct.relatedProduct.length === 0) ? <p className="text-orange-800">Have no related product!</p>
                                 : relatedProduct.relatedProduct?.map((item, index) => {
                                     return <div key={index} className="products__item bg-white radius-primary pt-[5px] px-[5px] pb-[10px]">
                                         <div className="relative overflow-hidden h-44">
@@ -192,8 +192,8 @@ const ProductDetailPage = () => {
                                                 to cart <i className="bi bi-bag"></i></button>
                                         </div>
                                         <div className="my-0 mx-2">
-                                            <h3 className="my-[3px] mx-0 h-auto"><a className="font-normal text-[15px] block w-[190px] truncate" href="">
-                                                {item.name}</a></h3>
+                                            <h3 className="my-[3px] mx-0 h-auto">
+                                                <a className="font-normal text-[15px] block w-[190px] truncate" to="">{item.name}</a></h3>
                                             <div className="flex justify-between items-center">
                                                 <div className="">
                                                     <span className="product__price product__price--now pr-1">{(item.salePrice) ? formatPrice(item.salePrice) : formatPrice(item.regularPrice)}</span>

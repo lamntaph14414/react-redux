@@ -3,9 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import AsideCategory from '../../../components/client/Shop/AsideCategory';
 import ListProduct from '../../../components/client/Shop/ListProduct';
-type Props = {}
 
-const ProductPage = (props: Props) => {
+
+const ProductPage = () => {
+    let [reRenderPage, setRenderPage] = useState(0)
+    const products = useSelector(data => data.product.value)
+    const dataProductPage = useSelector(data => data.product.valueLimitPage)
+    const dataProductFilter = useSelector(data => data.product.valueFilter)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const {page} = useParams()
+    
   return (
     <>
         <div>

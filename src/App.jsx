@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { addProduct, listProduct } from './features/product/productSlice';
+import { listProduct } from './features/product/productSlice';
 
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import HomePage from './pages/client/HomePage';

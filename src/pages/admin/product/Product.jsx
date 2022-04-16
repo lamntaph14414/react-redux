@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { listProduct, removeProducts } from '../../../features/product/productSlice'
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid} from '@mui/x-data-grid'
 import { formatPrice } from '../../../utils/formatNumber'
 
 

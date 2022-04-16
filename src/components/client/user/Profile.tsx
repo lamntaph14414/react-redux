@@ -24,12 +24,12 @@ const Profile = () => {
                 <div className="text-center">
                     <img className="img-responsive w-36 h-36 object-cover inline-block rounded-full" src="https://image.thanhnien.vn/w660/Uploaded/2022/bzivoxbp/2021_01_25/rose_qnem.jpg" alt="" />
                     <input type="file" className="block w-full my-2 text-sm text-slate-500
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-full file:border-0
-      file:text-sm file:font-semibold
-      file:bg-violet-50 file:text-violet-700
-      hover:file:bg-violet-100
-    "/>
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-violet-50 file:text-violet-700
+                        hover:file:bg-violet-100
+                        "/>
                 </div>
             </form>
         </>

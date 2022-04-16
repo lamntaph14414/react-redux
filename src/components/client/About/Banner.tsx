@@ -5,8 +5,7 @@ const Banner = () => {
         <div className="max-w-full slideShow overflow-hidden">
             <div className=" max-w-7xl w-full relative m-auto rounded-2xl overflow-hidden">
                 <div className="mySlides fade">
-                    <img className="w-full h-[450px] object-cover"
-                        src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+                    <img className='w-full h-[450px] object-cover' src='https://mona.media/wp-content/uploads/2021/06/banner-giay.png'/>
                 </div>
                 <div className="overlay flex absolute top-0 w-full h-full bg-[#332C54] bg-opacity-[65%] text-center">
                     <div className="m-auto">
